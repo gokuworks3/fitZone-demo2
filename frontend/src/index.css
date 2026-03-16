@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-brand-black font-body text-brand-light antialiased;
+  margin: 0;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(255, 46, 46, 0.14), transparent 30%),
+    radial-gradient(circle at 85% 35%, rgba(255, 46, 46, 0.1), transparent 35%),
+    linear-gradient(180deg, #050505 0%, #0a0a0b 65%, #050505 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .section-wrapper {
+    @apply mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8;
+  }
+
+  .page-top-space {
+    @apply pt-28 sm:pt-32;
+  }
+
+  .primary-btn {
+    @apply rounded-lg bg-brand-red px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-brand-redDark;
+  }
+
+  .secondary-btn {
+    @apply rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-brand-light transition hover:border-brand-red/60 hover:bg-brand-red/10;
+  }
+
+  .form-label {
+    @apply mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-brand-muted;
+  }
+
+  .form-input {
+    @apply w-full rounded-lg border border-white/15 bg-black/50 px-4 py-3 text-sm text-brand-light placeholder:text-brand-muted/70 focus:border-brand-red/70 focus:outline-none;
+  }
+}
