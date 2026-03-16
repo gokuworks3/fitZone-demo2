@@ -68,6 +68,23 @@ npm run build
 npm run preview
 ```
 
+## Deploy to Vercel
+
+This repository keeps the app in `frontend/`. A root `vercel.json` is included so Vercel installs and builds from the correct folder.
+
+If your Vercel project was created before this config:
+
+1. Keep project root as the repository root (do not set Root Directory to `frontend`).
+2. Clear any custom Build Command/Install Command in Vercel settings, or redeploy so `vercel.json` values are used.
+3. Trigger a new deployment.
+
+The config used:
+
+- Install command: `cd frontend && npm install`
+- Build command: `cd frontend && npm run build`
+- Output directory: `frontend/dist`
+- SPA rewrite to support React Router routes.
+
 ## Demo Notes
 
 - No backend is required.
