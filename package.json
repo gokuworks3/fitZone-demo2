@@ -1,0 +1,16 @@
+{
+  "name": "fitzone-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "npm install --prefix fitzone/server && npm install --prefix fitzone/client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --prefix fitzone/server",
+    "dev:client": "npm run dev --prefix fitzone/client",
+    "build": "npm run build --prefix fitzone/client",
+    "lint": "npm run lint --prefix fitzone/client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
