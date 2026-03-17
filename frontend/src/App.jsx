@@ -16,7 +16,7 @@ const App = () => {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-brand-black text-brand-light">
+    <div className="min-h-screen overflow-x-hidden bg-brand-black text-brand-light">
       <ScrollToTop />
       <Navbar />
 

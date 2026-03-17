@@ -1,10 +1,36 @@
+import { useEffect } from 'react'
 import { AnimatePresence, motion as Motion } from 'framer-motion'
-import { X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
-const ImageLightbox = ({ selectedImage, onClose }) => {
+const ImageLightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
+  const activeImage = currentIndex >= 0 ? images[currentIndex] : null
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (!activeImage) {
+        return
+      }
+
+      if (event.key === 'Escape') {
+        onClose()
+      }
+
+      if (event.key === 'ArrowLeft') {
+        onPrev()
+      }
+
+      if (event.key === 'ArrowRight') {
+        onNext()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [activeImage, onClose, onPrev, onNext])
+
   return (
     <AnimatePresence>
-      {selectedImage ? (
+      {activeImage ? (
         <Motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -28,11 +54,34 @@ const ImageLightbox = ({ selectedImage, onClose }) => {
             >
               <X size={20} />
             </button>
+
+            <button
+              type="button"
+              onClick={onPrev}
+              className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/70 p-2 text-white transition hover:bg-brand-red"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={22} />
+            </button>
+
+            <button
+              type="button"
+              onClick={onNext}
+              className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/70 p-2 text-white transition hover:bg-brand-red"
+              aria-label="Next image"
+            >
+              <ChevronRight size={22} />
+            </button>
+
             <img
-              src={selectedImage.image}
-              alt={selectedImage.title}
+              src={activeImage.image}
+              alt={activeImage.title}
               className="max-h-[88vh] w-full rounded-xl object-contain"
             />
+
+            <p className="mt-3 text-center font-heading text-lg uppercase tracking-wider text-brand-light">
+              {activeImage.title}
+            </p>
           </Motion.div>
         </Motion.div>
       ) : null}

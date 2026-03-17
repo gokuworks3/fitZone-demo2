@@ -88,7 +88,6 @@ export const trainers = [
       'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=900&q=80',
     socials: {
       instagram: 'https://instagram.com',
-      facebook: 'https://facebook.com',
       twitter: 'https://twitter.com',
     },
   },
@@ -101,7 +100,6 @@ export const trainers = [
       'https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=80',
     socials: {
       instagram: 'https://instagram.com',
-      facebook: 'https://facebook.com',
       twitter: 'https://twitter.com',
     },
   },
@@ -114,7 +112,6 @@ export const trainers = [
       'https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?auto=format&fit=crop&w=900&q=80',
     socials: {
       instagram: 'https://instagram.com',
-      facebook: 'https://facebook.com',
       twitter: 'https://twitter.com',
     },
   },
@@ -127,7 +124,6 @@ export const trainers = [
       'https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&fit=crop&w=900&q=80',
     socials: {
       instagram: 'https://instagram.com',
-      facebook: 'https://facebook.com',
       twitter: 'https://twitter.com',
     },
   },
